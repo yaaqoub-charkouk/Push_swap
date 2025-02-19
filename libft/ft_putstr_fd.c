@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 13:25:59 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/19 19:14:17 by ycharkou         ###   ########.fr       */
+/*   Created: 2024/10/30 12:36:10 by ycharkou          #+#    #+#             */
+/*   Updated: 2024/11/09 16:59:04 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
 
-int		main_parsing(char **av, int ac, t_stack **a);
-void	store_in_stack(t_stack **stack, int value);
-// moves
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
-
-#endif
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write (fd, &s[i], 1);
+		i++;
+	}
+}

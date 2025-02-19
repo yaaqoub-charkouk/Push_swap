@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/18 13:25:59 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/19 19:14:17 by ycharkou         ###   ########.fr       */
+/*   Created: 2024/10/31 19:33:55 by ycharkou          #+#    #+#             */
+/*   Updated: 2025/02/19 11:32:24 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "libft/libft.h"
+void	ft_stack_clear(t_stack **lst)
+{
+	t_stack	*tmp;
 
-int		main_parsing(char **av, int ac, t_stack **a);
-void	store_in_stack(t_stack **stack, int value);
-// moves
-void	pa(t_stack **stack_a, t_stack **stack_b);
-void	pb(t_stack **stack_a, t_stack **stack_b);
-
-#endif
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
+	}
+	*lst = NULL;
+}

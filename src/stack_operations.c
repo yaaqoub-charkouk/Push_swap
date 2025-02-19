@@ -19,3 +19,4 @@ void	store_in_stack(t_stack **stack, int value)
 		return ;
 	ft_lstadd_back(stack, new_node);
 }
+

@@ -6,13 +6,13 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:14:50 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/18 16:08:27 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:10:23 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_stack	*ft_lstnew(void *content)
+t_stack	*ft_lstnew(int content)
 {
 	t_stack	*node1;
 

@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:18:11 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/18 19:04:38 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:36:30 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ long	ft_atoi(const char *str)
 	int		sign;
 	int		i;
 
+	if (!str)
+		return (write(1, "Error\n", 6), 0);
 	result = 0;
 	sign = 1;
 	i = 0;
@@ -31,12 +33,15 @@ long	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		if (result > (LONG_MAX - (str[i] - '0')) / 10)
-		{
-			if (sign == 1)
-				return (-1);
-			return (0);
-		}
+			return (write(1, "Error\n", 6), 0);
 		result = result * 10 + (str[i++] - '0');
 	}
 	return (result * sign);
 }
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	printf("the integer is : %ld", ft_atoi("-458"));
+// 	return (0);
+// }
