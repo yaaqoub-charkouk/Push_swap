@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 17:47:30 by ycharkou          #+#    #+#             */
-/*   Updated: 2024/11/25 17:49:23 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:59:22 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_putstr_fd(char *s, int fd)
 	return (bytes_written);
 }
 
-size_t	ft_strlen(const char *s)
+static size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

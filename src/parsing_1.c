@@ -6,19 +6,11 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:47:42 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/19 12:05:24 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:09:05 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	free_and_exit(t_stack **a, char **numbers)
-{
-	ft_error(2);
-	ft_free_matrix(numbers);
-	ft_stack_clear(a);
-	exit(EXIT_FAILURE);
-}
 
 int	has_duplicate(t_stack *a, int num)
 {
@@ -72,6 +64,7 @@ int	main_parsing(char **av, int ac, t_stack **a)
 	int		j;
 
 	i = 0;
+	numbers = NULL;
 	while (++i < ac)
 	{
 		j = 0;

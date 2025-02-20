@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaaqoub <yaaqoub@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:16:13 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/20 09:01:45 by yaaqoub          ###   ########.fr       */
+/*   Updated: 2025/02/20 17:01:12 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	ft_stack_clear(t_stack **lst);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, size_t n);
-void	ft_putstr_fd(char *s, int fd);
+int		ft_stack_size(t_stack *lst);
 
 #endif

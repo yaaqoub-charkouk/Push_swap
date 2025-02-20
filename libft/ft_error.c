@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 12:36:10 by ycharkou          #+#    #+#             */
-/*   Updated: 2024/11/09 16:59:04 by ycharkou         ###   ########.fr       */
+/*   Created: 2024/10/30 12:41:53 by ycharkou          #+#    #+#             */
+/*   Updated: 2025/02/20 17:00:56 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+static void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
@@ -24,4 +24,10 @@ void	ft_putstr_fd(char *s, int fd)
 		write (fd, &s[i], 1);
 		i++;
 	}
+}
+
+void	ft_error(int fd)
+{
+	ft_putstr_fd("Error", fd);
+	write (fd, "\n", 1);
 }
