@@ -6,7 +6,7 @@
 /*   By: yaaqoub <yaaqoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:25:59 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/21 11:35:17 by yaaqoub          ###   ########.fr       */
+/*   Updated: 2025/02/21 17:32:52 by yaaqoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_and_exit(t_stack **a, char **numbers);
 int     is_sorted(t_stack *stack);
 int     get_max(t_stack *stack);
 int	    get_min(t_stack *stack);
-void	sort_stack(t_stack *a, t_stack *b);
+void	sort_stack(t_stack **a, t_stack **b);
 void	ft_free_stacks(t_stack *a, t_stack *b);
 
 // moves

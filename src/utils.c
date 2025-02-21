@@ -48,15 +48,6 @@ int	get_min(t_stack *stack)
 	return (min);
 }
 
-void print_stack(t_stack *a)
-{
-	while (a)
-	{
-		ft_printf("hte stack is %d\n", a->content);
-		a = a->next;
-	}
-}
-
 void	ft_free_stacks(t_stack *a, t_stack *b)
 {
 	ft_stack_clear(&a);
