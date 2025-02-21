@@ -1,11 +1,22 @@
 #include "../push_swap.h"
 
+// void	free_and_exit(t_stack **a, char **numbers)
+// {
+// 	ft_error(2);
+// 	if (!numbers)
+// 		ft_free_matrix(numbers);
+// 	ft_stack_clear(a);
+// 	exit(EXIT_FAILURE);
+// }
+
+
 void	free_and_exit(t_stack **a, char **numbers)
 {
 	ft_error(2);
-	if (!numbers)
+	if (numbers)
 		ft_free_matrix(numbers);
-	ft_stack_clear(a);
+	if (a && *a)
+		ft_stack_clear(a);
 	exit(EXIT_FAILURE);
 }
 
@@ -44,4 +55,12 @@ void print_stack(t_stack *a)
 		ft_printf("hte stack is %d\n", a->content);
 		a = a->next;
 	}
+}
+
+void	ft_free_stacks(t_stack *a, t_stack *b)
+{
+	ft_stack_clear(&a);
+	ft_stack_clear(&b);
+	// a = NULL;
+	// b = NULL;
 }

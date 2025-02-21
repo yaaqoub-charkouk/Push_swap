@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yaaqoub <yaaqoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:25:59 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/20 17:39:57 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:35:17 by yaaqoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int     is_sorted(t_stack *stack);
 int     get_max(t_stack *stack);
 int	    get_min(t_stack *stack);
 void	sort_stack(t_stack *a, t_stack *b);
+void	ft_free_stacks(t_stack *a, t_stack *b);
 
 // moves
 void	pa(t_stack **stack_a, t_stack **stack_b);

@@ -39,8 +39,6 @@ void	sort_four(t_stack *a, t_stack *b)
 	int	min;
 
 	min = get_min(a);
-	if (a->content == min)
-		;
 	if (a->next->content == min)
 		ra(&a);
 	else if (a->next->next->content == min)
@@ -48,11 +46,14 @@ void	sort_four(t_stack *a, t_stack *b)
 		rra(&a);
 		rra(&a);
 	}
-	else
+	else if (a->next->next->next->content == min)
 		rra(&a);
-	pb(&a, &b);
-	sort_three(a);
-	pa(&a, &b);
+	if (!is_sorted(a))
+	{
+		pb(&a, &b);
+		sort_three(a);
+		pa(&a, &b);
+	}
 }
 
 

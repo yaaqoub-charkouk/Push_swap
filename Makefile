@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 TARGET = push_swap
 UTILS = libft/ft_atoi.c \
 	libft/ft_bzero.c \
@@ -40,7 +40,7 @@ clean:
 	rm -f $(U_OBJS) $(S_OBJS)
 
 fclean: clean
-	rm -f push_swap
+	rm -f $(TARGET)
 
-re: fclean push_swap
+re: fclean all
 	$(CC) $(CFLAGS) $< -o 
