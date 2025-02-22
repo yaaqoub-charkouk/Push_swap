@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:47:42 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/20 17:09:05 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:43:42 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ int	main_parsing(char **av, int ac, t_stack **a)
 	{
 		j = 0;
 		numbers = ft_split(av[i], ' ');
-		if (!numbers || !numbers[0])
-			return (ft_free_matrix(numbers), ft_error(2), 0);
+		if (!numbers)
+			return (ft_error(2), 0);
 		while (numbers[j])
 		{
 			helper(a, numbers, j);

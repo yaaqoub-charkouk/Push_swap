@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_operations.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/22 08:53:00 by ycharkou          #+#    #+#             */
+/*   Updated: 2025/02/22 19:25:31 by ycharkou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	store_in_stack(t_stack **stack, int value)
 {
-	t_stack *new_node;
+	t_stack	*new_node;
 
 	new_node = ft_lstnew(value);
 	if (!new_node)
@@ -18,83 +30,46 @@ int	is_sorted(t_stack *stack)
 			return (0);
 		stack = stack->next;
 	}
-	return (1);	
+	return (1);
 }
 
-void	sort_three(t_stack **stack)
+void	ft_free_stacks(t_stack *a, t_stack *b)
 {
-	int	max;
-
-	max = get_max((*stack));
-	if (max == (*stack)->content)
-		ra(stack);
-	if (max == (*stack)->next->content)
-		rra(stack);
-	if ((*stack)->content > (*stack)->next->content)
-		sa(stack);
+	ft_stack_clear(&a);
+	ft_stack_clear(&b);
 }
 
-void	sort_four(t_stack **a, t_stack **b)
+int	max_node_index(t_stack *stack, int max_index)
 {
-	int	min;
+	int	i;
 
-	min = get_min(*a);
-	if ((*a)->next->content == min)
-		ra(a);
-	else if ((*a)->next->next->content == min)
+	i = 0;
+	while (stack && stack->index != max_index)
 	{
-		rra(a);
-		rra(a);
+		stack = stack->next;
+		i++;
 	}
-	else if ((*a)->next->next->next->content == min)
-		rra(a);
-	if (!is_sorted(*a))
-	{
-		pb(a, b);
-		sort_three(a);
-		pa(a, b);
-	}
+	return (i);
 }
 
-void	sort_five(t_stack **a, t_stack **b)
+void	indexing(t_stack **stack)
 {
-	int	min;
+	int i;
+	t_stack *tmp;
+	t_stack *ptr;
 
-	min = get_min(*a);
-	if ((*a)->next->content == min)
-		ra(a);
-	else if ((*a)->next->next->content == min)
+	ptr = *stack;
+	while (ptr)
 	{
-		ra(a);
-		ra(a);
+		tmp = *stack;
+		i = 0;
+		while (tmp)
+		{
+			if (ptr->content > tmp->content)
+				i++;
+			tmp = tmp->next;
+		}
+		ptr->index = i;
+		ptr = ptr->next;
 	}
-	else if ((*a)->next->next->next->content == min)
-	{
-		rra(a);
-		rra(a);
-	}
-	else if ((*a)->next->next->next->next->content == min)
-		rra(a);
-	if (!is_sorted(*a))
-	{
-		pb(a, b);
-		sort_four(a, b);
-		pa(a, b);
-	}
-}
-
-
-void	sort_stack(t_stack **a, t_stack **b)
-{
-	int	size;
-
-	size = ft_stack_size(*a);
-	if (size == 2)
-		sa(a);
-	if (size == 3)
-		sort_three(a);
-	if (size == 4)
-		sort_four(a, b);
-	if (size == 5)
-		sort_five(a, b);
 }

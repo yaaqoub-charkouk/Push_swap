@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 TARGET = push_swap
 UTILS = libft/ft_atoi.c \
 	libft/ft_bzero.c \
@@ -22,10 +22,13 @@ SRC = src/push_swap.c \
 	src/utils.c \
 	src/parsing_1.c \
 	src/stack_operations.c \
+	src/sorting.c \
+	src/sorting_2.c \
 	moves/push.c \
 	moves/rotate.c \
 	moves/reverse_rotate.c \
-	moves/swap.c
+	moves/swap.c 
+
 	
 U_OBJS = $(UTILS:.c=.o)
 S_OBJS = $(SRC:.c=.o)
@@ -36,7 +39,7 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
-%.o : %.c
+%.o : %.c push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

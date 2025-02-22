@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/22 08:57:18 by ycharkou          #+#    #+#             */
+/*   Updated: 2025/02/22 18:29:41 by ycharkou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 // void	free_and_exit(t_stack **a, char **numbers)
@@ -8,7 +20,6 @@
 // 	ft_stack_clear(a);
 // 	exit(EXIT_FAILURE);
 // }
-
 
 void	free_and_exit(t_stack **a, char **numbers)
 {
@@ -48,10 +59,30 @@ int	get_min(t_stack *stack)
 	return (min);
 }
 
-void	ft_free_stacks(t_stack *a, t_stack *b)
+t_stack	*get_min_node(t_stack *stack)
 {
-	ft_stack_clear(&a);
-	ft_stack_clear(&b);
-	// a = NULL;
-	// b = NULL;
+	int	min;
+
+	min = get_min(stack);
+	while (stack)
+	{
+		if (stack->content == min)
+			return (stack);
+		stack = stack->next;
+	}
+	return (stack);
+}
+
+t_stack	*get_max_node(t_stack *stack)
+{
+	int	max;
+
+	max = get_max(stack);
+	while (stack)
+	{
+		if (stack->content == max)
+			return (stack);
+		stack = stack->next;
+	}
+	return (stack);
 }

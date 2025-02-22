@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 15:15:37 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/19 11:42:32 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:10:54 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,12 +107,18 @@ char	**ft_split(char const *s, char c)
 	len = ft_strlen(s);
 	words_count = ft_count_words(s, c);
 	if (*s == '\0' || words_count == 0)
-	{
-		buffer = ft_calloc(1, sizeof(char *));
-		return (buffer);
-	}
+		return (NULL);
 	buffer = ft_calloc((words_count + 1), sizeof(char *));
 	if (!buffer)
 		return (NULL);
 	return (ft_split_words(s, c, buffer, len));
 }
+
+// int main(int ac, char **av)
+// {
+// 	char **s;
+
+// 	s = ft_split(av[1], ' ');
+// 	printf("%s\n", s[0]);
+// 	return (0);
+// }

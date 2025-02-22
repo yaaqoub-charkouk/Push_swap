@@ -124,12 +124,13 @@ test_cases=(
     "5 4 3 2 1"
 )
 
-# Loop through all test cases
+
 for current_case in "${test_cases[@]}"; do
-    # Print the test case
-    echo "Testing: ./push_swap $current_case"
 
-    ./push_swap $current_case 
+    # echo "Testing: ./push_swap $current_case"
 
-    echo "-----------------------------"
+    ./push_swap $current_case | ./checker_Mac $current_case
+    # echo -n "moves count" && 
+
+    # echo "-----------------------------"
 done

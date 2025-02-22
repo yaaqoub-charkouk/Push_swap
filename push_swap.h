@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yaaqoub <yaaqoub@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:25:59 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/21 17:32:52 by yaaqoub          ###   ########.fr       */
+/*   Updated: 2025/02/22 19:28:18 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ int     get_max(t_stack *stack);
 int	    get_min(t_stack *stack);
 void	sort_stack(t_stack **a, t_stack **b);
 void	ft_free_stacks(t_stack *a, t_stack *b);
+void	sort_stack(t_stack **a, t_stack **b);
+t_stack	*get_max_node(t_stack *stack);
+t_stack	*get_min_node(t_stack *stack);
+int		max_node_index(t_stack *stack, int max_index);
+void	indexing(t_stack **stack);
+void	sort_larger_stack(t_stack **a, t_stack **b);
 
 // moves
 void	pa(t_stack **stack_a, t_stack **stack_b);
@@ -40,4 +46,5 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 
 void print_stack(t_stack *a);
+
 #endif
