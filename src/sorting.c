@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 08:55:59 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/22 19:28:32 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/23 16:02:40 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ void	sort_stack(t_stack **a, t_stack **b)
 	size = ft_stack_size(*a);
 	if (size == 2)
 		sa(a);
-	if (size == 3)
+	else if (size == 3)
 		sort_three(a);
-	if (size == 4)
+	else if (size == 4)
 		sort_four(a, b);
-	if (size == 5)
+	else if (size == 5)
 		sort_five(a, b);
 	else
 	{

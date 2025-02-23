@@ -19,9 +19,9 @@ void	from_b_to_a(t_stack **a, t_stack **b)
 		else
 		{
 			while ((*b)->index != index)
-					rb(b);
+					rrb(b);
 		}
-		pb(a, b);
+		pa(a, b);
 	}
 }
 

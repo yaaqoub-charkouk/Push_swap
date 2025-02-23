@@ -1,6 +1,8 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 TARGET = push_swap
+B_TARGET = checker
+HEADERS = header.h libft/libft.h get_next_line/get_next_line.h ft_printf/ft_printf.h bonus/header_bonus.h
 UTILS = libft/ft_atoi.c \
 	libft/ft_bzero.c \
 	libft/ft_calloc.c \
@@ -29,9 +31,19 @@ SRC = src/push_swap.c \
 	moves/reverse_rotate.c \
 	moves/swap.c 
 
-	
+BNS = bonus/apply_move.c \
+	bonus/checker_bonus.c \
+	bonus/stack_operations_bonus.c \
+	bonus/moves_bonus.c \
+	bonus/utils_bonus.c \
+	bonus/parsing_bonus.c \
+	get_next_line/get_next_line.c \
+	get_next_line/get_next_line_utils.c
+
+
 U_OBJS = $(UTILS:.c=.o)
 S_OBJS = $(SRC:.c=.o)
+B_OBJS = $(BNS:.c=.o)
 OBJS = $(U_OBJS) $(S_OBJS)
 
 all: $(TARGET)
@@ -39,13 +51,18 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
-%.o : %.c push_swap.h
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus: $(B_TARGET) 
+
+$(B_TARGET): $(B_OBJS) $(U_OBJS)
+	$(CC) $(CFLAGS) $(B_OBJS) -o $(B_TARGET)
+
+
+
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(B_OBJS)
 
 fclean: clean
-	rm -f $(TARGET)
+	rm -f $(TARGET) $(B_TARGET)
 
 re: fclean all
