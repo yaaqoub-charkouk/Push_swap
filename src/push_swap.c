@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 08:52:31 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/24 13:18:06 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/24 15:30:14 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	atexit(leaktest);
+	// atexit(leaktest);
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 2)
