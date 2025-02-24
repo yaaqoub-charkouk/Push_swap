@@ -6,18 +6,24 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 13:49:09 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/23 13:49:10 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:17:21 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int main(int ac, char **av)
+void	leaktest(void)
+{
+	system("leaks -q checker");
+}
+
+int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	*move;
 	
+	atexit(leaktest);
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 2)
@@ -30,7 +36,6 @@ int main(int ac, char **av)
 		while (move)
 		{
 			apply_move(&stack_a, &stack_b, move);
-			free(move);
 			move = get_next_line(0);
 		}
 		free(move);

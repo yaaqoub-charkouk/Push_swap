@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:16:13 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/23 12:44:13 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/24 12:53:51 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,4 @@ void	ft_bzero(void *s, size_t n);
 int		ft_stack_size(t_stack *lst);
 
 #endif
+

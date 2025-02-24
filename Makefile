@@ -2,7 +2,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 TARGET = push_swap
 B_TARGET = checker
-HEADERS = header.h libft/libft.h get_next_line/get_next_line.h ft_printf/ft_printf.h bonus/header_bonus.h
+
 UTILS = libft/ft_atoi.c \
 	libft/ft_bzero.c \
 	libft/ft_calloc.c \
@@ -38,31 +38,43 @@ BNS = bonus/apply_move.c \
 	bonus/utils_bonus.c \
 	bonus/parsing_bonus.c \
 	get_next_line/get_next_line.c \
-	get_next_line/get_next_line_utils.c
-
+	get_next_line/get_next_line_utils.c \
+	libft/ft_strcmp.c
 
 U_OBJS = $(UTILS:.c=.o)
 S_OBJS = $(SRC:.c=.o)
 B_OBJS = $(BNS:.c=.o)
-OBJS = $(U_OBJS) $(S_OBJS)
+
+HEADERS = libft/libft.h ft_printf/ft_printf.h
+MANDATORY_HEADER = push_swap.h
+BONUS_HEADER = bonus/push_swap_bonus.h
+
 
 all: $(TARGET)
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
+$(TARGET): $(S_OBJS) $(U_OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
-bonus: $(B_TARGET) 
+bonus : $(B_TARGET)
 
-$(B_TARGET): $(B_OBJS) $(U_OBJS)
-	$(CC) $(CFLAGS) $(B_OBJS) -o $(B_TARGET)
+$(B_TARGET): $(U_OBJS) $(B_OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
 
+$(U_OBJS): %.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
+$(S_OBJS): %.o: %.c $(HEADERS) $(MANDATORY_HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
+$(B_OBJS): %.o: %.c $(HEADERS) $(BONUS_HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) $(B_OBJS)
+	rm -f $(U_OBJS) $(S_OBJS) $(B_OBJS)
 
 fclean: clean
 	rm -f $(TARGET) $(B_TARGET)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus

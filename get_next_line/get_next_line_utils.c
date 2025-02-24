@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 15:11:56 by ycharkou          #+#    #+#             */
-/*   Updated: 2024/11/20 17:01:24 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/24 11:43:30 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ ssize_t	ft_strchr(const char *accumulation, int c)
 	return (-1);
 }
 
-size_t	ft_strlen(const char *accumulation)
+static size_t	ft_strlen(const char *accumulation)
 {
 	size_t	i;
 

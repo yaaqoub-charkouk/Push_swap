@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:25:59 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/22 19:28:18 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/24 12:54:06 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_stack	*get_min_node(t_stack *stack);
 int		max_node_index(t_stack *stack, int max_index);
 void	indexing(t_stack **stack);
 void	sort_larger_stack(t_stack **a, t_stack **b);
+
 
 // moves
 void	pa(t_stack **stack_a, t_stack **stack_b);
