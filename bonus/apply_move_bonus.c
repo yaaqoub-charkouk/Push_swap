@@ -6,12 +6,11 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 13:51:50 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/24 12:43:04 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:47:07 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
 
 int	is_valid_move(char *move)
 {
@@ -33,6 +32,7 @@ int	is_valid_move(char *move)
 		return (1);
 	return (0);
 }
+
 void	apply_move(t_stack **a, t_stack **b, char *move)
 {
 	if (!ft_strcmp(move, "sa") || !ft_strcmp(move, "ss"))

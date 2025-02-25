@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:16:13 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/24 12:53:51 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:57:47 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_error(int fd);
 size_t	ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
 void	ft_lstadd_front(t_stack **lst, t_stack *new);
-t_stack *ft_lstnew(int content);
-t_stack *ft_lstlast(t_stack *lst);
+t_stack	*ft_lstnew(int content);
+t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lst_before_last(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	ft_stack_clear(t_stack **lst);
@@ -42,4 +42,3 @@ void	ft_bzero(void *s, size_t n);
 int		ft_stack_size(t_stack *lst);
 
 #endif
-

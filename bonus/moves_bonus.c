@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves_bonus.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/25 09:48:22 by ycharkou          #+#    #+#             */
+/*   Updated: 2025/02/25 09:49:06 by ycharkou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap_bonus.h"
 
 int	push(t_stack **from, t_stack **to)
@@ -15,7 +27,7 @@ int	push(t_stack **from, t_stack **to)
 
 int	swap(t_stack **stack)
 {
-	int tmp;
+	int	tmp;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return (0);
@@ -44,6 +56,7 @@ int	reverse_rotate(t_stack **stack)
 {
 	t_stack	*before_last;
 	t_stack	*last;
+
 	if (!stack || !*stack || !(*stack)->next)
 		return (0);
 	before_last = ft_lst_before_last(*stack);

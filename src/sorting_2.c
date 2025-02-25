@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sorting_2.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/25 09:38:56 by ycharkou          #+#    #+#             */
+/*   Updated: 2025/02/25 09:40:21 by ycharkou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	from_b_to_a(t_stack **a, t_stack **b)
 {
-	t_stack *max;
-	int	size;
-	int	index;
+	t_stack	*max;
+	int		size;
+	int		index;
 
 	while (*b)
 	{
@@ -13,13 +25,13 @@ void	from_b_to_a(t_stack **a, t_stack **b)
 		index = max->index;
 		if (max_node_index(*b, index) < size)
 		{
-				while ((*b)->index != index)
-					rb(b);
+			while ((*b)->index != index)
+				rb(b);
 		}
 		else
 		{
 			while ((*b)->index != index)
-					rrb(b);
+				rrb(b);
 		}
 		pa(a, b);
 	}
@@ -27,8 +39,8 @@ void	from_b_to_a(t_stack **a, t_stack **b)
 
 void	sort_larger_stack(t_stack **a, t_stack **b)
 {
-	int min;
-	int max;
+	int	min;
+	int	max;
 
 	min = 0;
 	max = ft_stack_size(*a) * 0.048 + 10;

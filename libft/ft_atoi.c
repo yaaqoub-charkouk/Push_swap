@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:18:11 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/24 12:19:31 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/25 10:21:33 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,3 @@ long	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	printf("the integer is : %ld", ft_atoi("-458"));
-// 	return (0);
-// }

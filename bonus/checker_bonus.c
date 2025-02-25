@@ -6,24 +6,18 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 13:49:09 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/24 15:30:22 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:47:46 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
-void	leaktest(void)
-{
-	system("leaks -q checker");
-}
 
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	char	*move;
-	
-	atexit(leaktest);
+
 	stack_a = NULL;
 	stack_b = NULL;
 	if (ac < 2)

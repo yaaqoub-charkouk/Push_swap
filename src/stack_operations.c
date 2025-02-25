@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 08:53:00 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/22 19:25:31 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:41:10 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	max_node_index(t_stack *stack, int max_index)
 
 void	indexing(t_stack **stack)
 {
-	int i;
-	t_stack *tmp;
-	t_stack *ptr;
+	int		i;
+	t_stack	*tmp;
+	t_stack	*ptr;
 
 	ptr = *stack;
 	while (ptr)

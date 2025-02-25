@@ -6,16 +6,16 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:32:30 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/24 12:39:20 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:50:13 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
-#include "../libft/libft.h"
-#include "../ft_printf/ft_printf.h"
-#include "../get_next_line/get_next_line.h"
+# include "../libft/libft.h"
+# include "../ft_printf/ft_printf.h"
+# include "../get_next_line/get_next_line.h"
 
 int		main_parsing(char **av, int ac, t_stack **a);
 int		push(t_stack **from, t_stack **to);

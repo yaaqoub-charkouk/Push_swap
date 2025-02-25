@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 16:54:31 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/23 12:48:38 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/02/25 09:53:53 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	unsigned char	*string1;
 	unsigned char	*string2;
 	int				i;
-	
+
 	i = 0;
 	string1 = (unsigned char *)s1;
 	string2 = (unsigned char *)s2;

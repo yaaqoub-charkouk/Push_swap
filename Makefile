@@ -31,7 +31,7 @@ SRC = src/push_swap.c \
 	moves/reverse_rotate.c \
 	moves/swap.c 
 
-BNS = bonus/apply_move.c \
+BNS = bonus/apply_move_bonus.c \
 	bonus/checker_bonus.c \
 	bonus/stack_operations_bonus.c \
 	bonus/moves_bonus.c \
@@ -47,7 +47,7 @@ B_OBJS = $(BNS:.c=.o)
 
 HEADERS = libft/libft.h ft_printf/ft_printf.h
 MANDATORY_HEADER = push_swap.h
-BONUS_HEADER = bonus/push_swap_bonus.h
+BONUS_HEADER = bonus/push_swap_bonus.h get_next_line/get_next_line.h
 
 
 all: $(TARGET)

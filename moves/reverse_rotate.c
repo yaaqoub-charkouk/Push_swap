@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/25 09:42:05 by ycharkou          #+#    #+#             */
+/*   Updated: 2025/02/25 09:42:36 by ycharkou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 int	reverse_rotate(t_stack **stack)
 {
 	t_stack	*before_last;
 	t_stack	*last;
+
 	if (!stack || !*stack || !(*stack)->next)
 		return (0);
 	before_last = ft_lst_before_last(*stack);
