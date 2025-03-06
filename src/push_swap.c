@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 08:52:31 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/03/05 11:29:12 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/03/06 14:56:57 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,10 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac < 2)
-		return (ft_error(2), 1);
-	else
+	if (ac >= 2)
 	{
 		if (!main_parsing(av, ac, &stack_a))
-			return (ft_stack_clear(&stack_a), 0);
+			return (ft_stack_clear(&stack_a), 1);
 		if (is_sorted(stack_a))
 			return (ft_stack_clear(&stack_a), 0);
 		sort_stack(&stack_a, &stack_b);
