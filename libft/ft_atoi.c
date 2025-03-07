@@ -6,7 +6,7 @@
 /*   By: ycharkou <ycharkou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:18:11 by ycharkou          #+#    #+#             */
-/*   Updated: 2025/02/25 10:21:33 by ycharkou         ###   ########.fr       */
+/*   Updated: 2025/03/07 07:12:09 by ycharkou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ long	ft_atoi(const char *str)
 	int		i;
 
 	if (!str)
-		return (write(1, "Error\n", 6), 0);
+		return (2147483648);
 	result = 0;
 	sign = 1;
 	i = 0;
@@ -33,7 +33,7 @@ long	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		if (result > (LONG_MAX - (str[i] - '0')) / 10)
-			return (write(1, "Error\n", 6), 0);
+			return (2147483648);
 		result = result * 10 + (str[i++] - '0');
 	}
 	return (result * sign);
